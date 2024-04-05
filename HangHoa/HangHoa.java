@@ -1,70 +1,72 @@
-package HangHoa;
 /*
-//DANG THANH TOAN
-//2280603288
-//22DTHG6
+DANG THANH TOAN
+2280603288
+22DTHG6
  */
+package HangHoa;
 import java.util.Scanner;
-public class HangHoa {
+public class HangHoa
+{
     private String maHang;
     private String tenHang;
     private long donGia;
-    Scanner scanner = new Scanner(System.in);
     public HangHoa()
     {
-        this.maHang = "";
-        this.tenHang = "";
-        this.donGia = 0;
-    }
-    public HangHoa(HangHoa hh)
-    {
-        this.maHang = hh.maHang;
-        this.tenHang = hh.tenHang;
-        this.donGia = hh.donGia;
+        super();
     }
     public HangHoa(String maHang, String tenHang, long donGia)
     {
+        super();
         this.maHang = maHang;
         this.tenHang = tenHang;
         this.donGia = donGia;
+    }
+    public HangHoa(HangHoa obj)
+    {
+        super();
+        this.maHang = obj.maHang;
+        this.tenHang = obj.tenHang;
+        this.donGia = obj.donGia;
     }
     public String getMaHang()
     {
         return maHang;
     }
+    public String getTenHang() {
+        return tenHang;
+    }
+    public long getDonGia() {
+        return donGia;
+    }
     public void setMaHang(String maHang) {
         this.maHang = maHang;
     }
-    public String getTenHang()
-    {
-        return tenHang;
-    }
-    public void setTenHang(String tenHang)
-    {
+    public void setTenHang(String tenHang) {
         this.tenHang = tenHang;
     }
-    public long getDonGia()
-    {
-        return donGia;
-    }
-
-    public void setDonGia(long donGia)
-    {
+    public void setDonGia(long donGia) {
         this.donGia = donGia;
     }
-
-    public void nhapHangHoa()
+    public void input()
     {
-        System.out.print("Nhập mã hàng: ");
-        maHang = scanner.nextLine();
-        System.out.print("Nhập tên hàng: ");
-        tenHang = scanner.nextLine();
-        System.out.print("Nhập đơn giá: ");
-        donGia = scanner.nextLong();
+        Scanner x = new Scanner(System.in);
+        System.out.print("Nhap ma hang : ");
+        maHang = x.nextLine();
+        System.out.print("Nhap ten hang : ");
+        tenHang = x.nextLine();
+        System.out.print("Nhap gia : ");
+        donGia = x.nextLong();
     }
-    @Override
-    public String toString()
+    public void keNgang()
     {
-        return String.format("| %10s | %10s | %10d |", this.maHang, this.tenHang, this.donGia);
+        System.out.printf("+ --------------- |---------------|--------------- +\n");
+    }
+    public void tieuDe() {
+        keNgang();
+        System.out.printf("| %-15s | %15s | %15s |\n", "  Mã hàng", "Tên hàng", "Đơn giá");
+        keNgang();
+    }
+    public void output() {
+        System.out.printf("|%15s|%15s|%15d|\n", maHang, tenHang, donGia);
     }
 }

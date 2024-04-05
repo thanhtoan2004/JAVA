@@ -1,30 +1,25 @@
-package HangHoa;
 /*
-//DANG THANH TOAN
-//2280603288
-//22DTHG6
+DANG THANH TOAN
+2280603288
+22DTHG6
  */
-public class HangHoaMain
-{
-    public static void main(String[] args)
-    {
-        DSHangHoa ds = new DSHangHoa();
-        ds.inputDS();
-        ds.outputDS();
-        ds.timkiemTenHang();
-        System.out.println("Danh sách sau khi sắp xếp: ");
-        ds.outputDS();
-        System.out.println("---------------------------");
-        ds.themHangHoa();
-        ds.outputDS();
-        ds.timkiemTenHang();
-        ds.xoaHangHoa();
-        System.out.println("Danh sách sau khi xóa: ");
-        ds.outputDS();
-        ds.suaHangHoa();
-        ds.outputDS();
-        DSHangHoa copyDS = ds.copy();
-        System.out.println("Danh sách đã được nhân bản:");
-        copyDS.outputDS();
+package HangHoa;
+public class HangHoaMain {
+    public static void main(String[] args) {
+        HangHoa hh = new HangHoa();
+        HangDM maylanh = new HangDM();
+        HangTP banhkeo = new HangTP();
+        System.out.println("Nhap thong tin hang hoa: ");
+        hh.input();
+        System.out.println("Xuat thong tin hang hoa: ");
+        hh.output();
+        System.out.println("\nNhap thong tin dien may : ");
+        maylanh.input();
+        System.out.println("Xuat thong tin dien may : ");
+        maylanh.output();
+        System.out.println("\nNhap thong tin hang thuc pham: ");
+        banhkeo.input();
+        System.out.println("Xuat thong tin hang thuc pham: ");
+        banhkeo.output();
     }
 }
